@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
 public class UserActionAspect {
 
     private static final Logger logger = LoggerFactory.getLogger(UserActionAspect.class);
-    @Before("@annotation(com.example.sem08hwPersonalNotesAspect.annotations.TrackUserAction)")
+    @Before("@annotation(com.example.sem10hwPersonalNotesTest.annotations.TrackUserAction)")
     public void logUserAction (JoinPoint joinPoint) {
         String methodName = joinPoint.getSignature().getName();
         Object[] args = joinPoint.getArgs();

@@ -11,7 +11,7 @@
 	<groupId>com.example</groupId>
 	<artifactId>sem10hwPersonalNotesAspectTest</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>sem06hwPersonalNotes</name>
+	<name>sem10hwPersonalNotesAspectTest</name>
 	<description>Demo project for Spring Boot &amp; API</description>
 	<properties>
 		<java.version>17</java.version>

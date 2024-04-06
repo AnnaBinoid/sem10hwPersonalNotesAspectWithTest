@@ -21,10 +21,10 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 public class NoteServiceImplCreateNoteIntegrationTest {
 
     @MockBean
-    private iNoteRepository noteRepository;
+    public iNoteRepository noteRepository;
 
     @Autowired
-    private iNoteService noteService;
+    public iNoteService noteService;
     @Test
     public void testCreateNote() {
         // Arrange
