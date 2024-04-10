@@ -21,8 +21,20 @@ public class User {
 
     private String userName;
 
-    public User(String name) {
-        this.userName = name;
+    private User(Builder builder) {
+        this.userName = builder.name;
+    }
+
+    public static class Builder {
+        private String name;
+
+        public Builder(String name) {
+            this.name = name;
+        }
+
+        public User build() {
+            return new User(this);
+        }
     }
 
 }

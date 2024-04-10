@@ -46,7 +46,7 @@ public class UserController {
             userById = iUserService.getUserById(id);
         } catch (RuntimeException e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST)
-                    .body(new User(null));
+                    .body(new User.Builder(null).build());
         }
         return new ResponseEntity<>(userById, HttpStatus.OK);
     }
