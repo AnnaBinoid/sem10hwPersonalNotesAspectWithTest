@@ -9,5 +9,4 @@ public class Sem10hwPersonalNotesTestApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(Sem10hwPersonalNotesTestApplication.class, args);
 	}
-
 }

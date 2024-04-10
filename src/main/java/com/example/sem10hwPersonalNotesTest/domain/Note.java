@@ -1,7 +1,9 @@
 package com.example.sem10hwPersonalNotesTest.domain;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
@@ -14,6 +16,8 @@ import java.time.LocalDateTime;
 @Entity
 //@NoArgsConstructor
 @Table(name = "notes")
+@AllArgsConstructor
+@NoArgsConstructor
 public class Note {
 
     /**
@@ -52,7 +56,7 @@ public class Note {
     public Note(String NoteName, String NoteBody) {
         this.noteName = NoteName;
         this.noteBody = NoteBody;
-        noteCreateTime = LocalDateTime.now();
+//        noteCreateTime = LocalDateTime.now();
     }
 
 }

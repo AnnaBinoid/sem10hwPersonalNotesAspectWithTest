@@ -2,11 +2,13 @@ package com.example.sem10hwPersonalNotesTest.controller;
 
 import com.example.sem10hwPersonalNotesTest.domain.Note;
 import com.example.sem10hwPersonalNotesTest.services.iNoteService;
+import com.example.sem10hwPersonalNotesTest.services.impl.FileGateway;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 /**
@@ -17,6 +19,9 @@ import java.util.List;
 @RequiredArgsConstructor
 public class NoteController {
 
+
+    private final FileGateway fileGateway;
+
     /**
      * Реализация связи репозиториев с контроллерами через интерфейсы.
      * На этапе сборки проекта Spring подтянет нужный класс
@@ -26,13 +31,13 @@ public class NoteController {
     private final iNoteService iNoteService;
 
     /**
-     * Добавление заметки.
+     * Добавление заметки и запись названия заметки в файл.
      * @param note - заметка от пользователя.
      * @return заметка пользователя сохраняется в репозиторий.
      */
     @PostMapping()
     public ResponseEntity<Note> createNote(@RequestBody Note note) {
-
+        fileGateway.writeToFile(note.getNoteName() + ".txt", note.toString());
         return new ResponseEntity<>(iNoteService.createNote(note)
                 , HttpStatus.CREATED);
     }
